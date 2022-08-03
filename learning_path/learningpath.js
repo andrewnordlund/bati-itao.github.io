@@ -19,6 +19,7 @@ let learningPath = {
 			let metadata = learningPath.contents["metadata"];
 			let blocks = learningPath.contents["blocks"];
 			let h1 = learningPath.createHTMLElement(document, "h1", {"id":"wb-cont", "textNode" : metadata["title"][learningPath.lang], "property":"name", "parentNode":container});
+			if (Object.assign) learningPath.createOptionsList(container);
 			let introTxt = metadata["intro"][learningPath.lang];
 			container.innerHTML += introTxt;
 			for (let i = 0; i < blocks.length; i++) {
@@ -30,7 +31,7 @@ let learningPath = {
 
 				if (learningPath.format == "table") {
 					learningPath.drawTables(blockDet, metadata, blocks[i]["courses"]);
-				} else if (learningPath.format == "lists") {
+				} else if (learningPath.format == "list") {
 					learningPath.drawLists(blockDet, metadata, blocks[i]["courses"]);
 				} else if (learningPath.format == "cards") {
 					learningPath.drawCards(blockDet, metadata, blocks[i]["courses"]);
@@ -41,6 +42,15 @@ let learningPath = {
 		} else {
 		}
 	}, // End of doc
+	createOptionsList : function (container) {
+		let p = learningPath.createHTMLElement(document, "p", {"parentNode":container, "textNode" : "View as:"});
+		let ul = learningPath.createHTMLElement(document, "ul", {"parentNode":container});
+		let types = ["table","list", "headings","cards"];
+		for (let i = 0; i<types.length; i++) {
+			let li = learningPath.createHTMLElement(document, "li", {"parentNode":ul});
+			let a = learningPath.createHTMLElement(document, "a", {"parentNode":li, "href":document.location.pathname + "?format=" + types[i], "textNode" : types[i].charAt(0).toUpperCase() + types[i].slice(1)});
+		}
+	}, // End of createOptionsList
 	drawTables : function (container, metadata, courses) {
 		let table = learningPath.createHTMLElement(document, "table", {"parentNode":container, "class":"table table-striped"});
 		let thead = learningPath.createHTMLElement(document, "thead", {"parentNode":table});
