@@ -52,6 +52,10 @@
 			"note" : {
 				"en" : "Note",
 				"fr" : "Remarque"
+			},
+			"block" : {
+				"en" : "Block",
+				"fr" : "BLOC"
 			}
 		},
 		"intro" : {

@@ -24,7 +24,7 @@ let learningPath = {
 			container.innerHTML += introTxt;
 			for (let i = 0; i < blocks.length; i++) {
 				let blockDet = learningPath.createHTMLElement(document, "details", {"parentNode":container});
-				let blockSum = learningPath.createHTMLElement(document, "summary", {"parentNode":blockDet, "textNode":blocks[i]["place"] + " - " + blocks[i]["title"][learningPath.lang]});
+				let blockSum = learningPath.createHTMLElement(document, "summary", {"parentNode":blockDet, "textNode": metadata["stringBundle"]["block"][learningPath.lang] + " " + blocks[i]["place"] + " - " + blocks[i]["title"][learningPath.lang]});
 				let objectiveDiv = learningPath.createHTMLElement(document, "div", {"parentNode":blockDet, "class":"alert alert-info"});
 				objectiveDiv.innerHTML = "<p><strong>" + metadata["stringBundle"]["objective"][learningPath.lang] + ":</strong>" + blocks[i]["objective"][learningPath.lang];
 				if (blocks[i]["prerequisites"]) {
