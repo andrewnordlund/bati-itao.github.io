@@ -27,6 +27,11 @@ let learningPath = {
 				let blockSum = learningPath.createHTMLElement(document, "summary", {"parentNode":blockDet, "textNode":blocks[i]["place"] + " - " + blocks[i]["title"][learningPath.lang]});
 				let objectiveDiv = learningPath.createHTMLElement(document, "div", {"parentNode":blockDet, "class":"alert alert-info"});
 				objectiveDiv.innerHTML = "<p><strong>" + metadata["stringBundle"]["objective"][learningPath.lang] + ":</strong>" + blocks[i]["objective"][learningPath.lang];
+				if (blocks[i]["prerequisites"]) {
+					let prereqDiv = learningPath.createHTMLElement(document, "div", {"parentNode":blockDet, "class":"alert alert-info"});
+					prereqDiv.innerHTML = "<p><strong>" + metadata["stringBundle"]["prerequisites"][learningPath.lang] + ":</strong>" + blocks[i]["prerequisites"][learningPath.lang];
+				}
+
 				if (blocks[i].note) blockDet.innerHTML += blocks[i]["note"][learningPath.lang];
 
 				if (learningPath.format == "table") {
