@@ -10,7 +10,7 @@
             content="Accessibility guidelines related to text spacing. Increased space between paragraphs, lines, words, and letters helps some users with low vision and users with dyslexia">
          <!-- Meta data-->
          <!-- Load closure template scripts -->
-         <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
+         <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
          <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-en.js"></script>
          <!-- Write closure template -->
          <script src="../../../scripts/refTop.min.js"></script>
@@ -79,8 +79,8 @@
                   </ul>
                      </details>
                   </nav>
-				  	<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1">Expand all details</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Collapse all<span class="wb-inv"> details</span></button>
+				  	<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1" id="expandAllButton" >Expand all details</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}" id="collapseAllButton"  disabled="disabled">	Collapse all<span class="wb-inv"> details</span></button>
 			
                   <section>
                      <h2 id="accessible-text-spacing">Accessible text spacing</h2>
@@ -108,39 +108,39 @@
                            <p>The bottom portion of the words "Your Needs" is cut off in a heading making that text unreadable in Figure 1. It should read "We Provide a Mobile Application Service to Meet Your Needs."</p>
                            <div class="panel panel-primary">
 								<div class="panel-body mrgn-bttm-0">
-									<p class="wb-inv">Example begins</p>
+									<p class="wb-inv" role="separator">Example begins</p>
 									
 									<figure>
 										<img src="images/image25.png" alt="Figure 1 Vertical text cut off is a failure." class="img-responsive"/>
 										<figcaption class="fig-bottom">Figure 1 Vertical text cut off is a failure.</figcaption>
 									</figure>
-									<p class="wb-inv">Example ends</p>
+									<p class="wb-inv" role="separator">Example ends</p>
 								</div>
 							</div>
                            
                            <p>In Figure 2 the last portion of text is cut off in 3 side-by-side headings. The 1st heading should read "A cog in the wheel." But it reads "A cog in the whe". Only half of the second "e" is visible and the letter "l" is completely missing. The 2nd heading should read "A penny for your thoughts". But it reads "A penny for your". The 3rd should read "Back to the drawing board." But it reads "Back to the drawi".</p>
                            <div class="panel panel-primary">
 								<div class="panel-body mrgn-bttm-0">
-									<p class="wb-inv">Example begins</p>
+									<p class="wb-inv" role="separator">Example begins</p>
 									
 									<figure>
 									   <img src="images/image26.png" alt="3 side-by-side headings with truncated text." class="img-responsive"/>
 									   <figcaption class="fig-bottom">Figure 2 Horizontal text cut off is a failure.</figcaption>
 									</figure>
-									<p class="wb-inv">Example ends</p>
+									<p class="wb-inv" role="separator">Example ends</p>
 								</div>
 							</div>
                            <h4>Text overlap</h4>
                            <p>In Figure 3 the last 3 words "Groups and Programs" of the heading "Technologists Seeking Input from Groups and Programs" overlap the following sentence. That sentence should read, "You are invited to share ideas and areas of interest related to the integration of technology from a group or program perspective." But the words "You are invited to share ideas and areas" are obscured and unreadable.</p>
                            <div class="panel panel-primary">
 								<div class="panel-body mrgn-bttm-0">
-									<p class="wb-inv">Example begins</p>
+									<p class="wb-inv" role="separator">Example begins</p>
 									
 									<figure>
 									   <img src="images/image27.png" alt="Heading text overlaps part of paragraph text." class="img-responsive"/>
 									   <figcaption class="fig-bottom">Figure 3 Overlapping text is a failure.</figcaption>
 									</figure>
-									<p class="wb-inv">Example ends</p>
+									<p class="wb-inv" role="separator">Example ends</p>
 								</div>
 							</div>
                         </div>

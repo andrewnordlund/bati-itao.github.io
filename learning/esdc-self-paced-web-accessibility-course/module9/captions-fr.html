@@ -10,7 +10,7 @@
 		content="Lignes directrices sur l’accessibilité relative aux sous- titres. Les sous- titres sont une version texte de la parole et d’autres éléments d’information audio nécessaires pour comprendre le contenu">
 		<!-- Meta data-->
 	<!-- Load closure template scripts -->
-	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
+	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-fr.js"></script>
 	<!-- Write closure template -->
 	<script src="../../../scripts/refTop.min.js"></script>
@@ -60,9 +60,7 @@
         "menuPath": "../../../ajax/menu-fr.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch-fr.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Sous-titres</h1>
 	
@@ -153,8 +151,8 @@
 					</ul>
 						</details>
 					</nav>
-	<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2  details-3  details-4   details-5  details-6  inline-captions">Afficher tout les détails</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  details-3  details-4   details-5  details-6  inline-captions " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Réduire tout<span class="wb-inv">les détails</span></button>
+	<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2  details-3  details-4   details-5  details-6  inline-captions" id="expandAllButton">Afficher tout les détails</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  details-3  details-4   details-5  details-6  inline-captions " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}"  id="collapseAllButton"  disabled="disabled">	Réduire tout<span class="wb-inv">les détails</span></button>
 				
 			<section>				
 				<h2 id="sous-titres">Aperçu – Sous-titres</h2>
@@ -175,10 +173,10 @@
 				<h2 id="caps-subtitles">Utilisations de l’expression «&nbsp;sous-titres&nbsp;»</h2>
 				<p>L’expression «&nbsp;sous-titres&nbsp;» peut être utilisée différemment dans différentes parties du monde. Aux fins du présent document&nbsp;:</p>
 				<ul>
-					<li>Les sous-titres (en anglais, <span lang="en-ca">«&nbsp;captions&nbsp;»</span>) présentent les dialogues parlés et d’autres renseignements audio nécessaires pour comprendre un contenu, y compris les effets sonores, la musique, les rires, l’identification de la personne qui parle et son emplacement. Ils sont habituellement affichés dans la même langue que l’audio parlé, mais des traductions peuvent être offertes dans des pistes de sous-titrage distinctes.</li>
-					<li>Dans l’autre utilisation de cette expression, les sous-titres (en anglais, <span lang="en-ca">«&nbsp;subtitles&nbsp;»</span>) communiquent uniquement les dialogues parlés, à l’intention des personnes non sourdes qui ont de la difficulté à comprendre la langue de la vidéo. Il s’agit souvent d’une traduction vers une langue différente.</li>
+					<li>Les sous-titres (en anglais, <span lang="en">«&nbsp;captions&nbsp;»</span>) présentent les dialogues parlés et d’autres renseignements audio nécessaires pour comprendre un contenu, y compris les effets sonores, la musique, les rires, l’identification de la personne qui parle et son emplacement. Ils sont habituellement affichés dans la même langue que l’audio parlé, mais des traductions peuvent être offertes dans des pistes de sous-titrage distinctes.</li>
+					<li>Dans l’autre utilisation de cette expression, les sous-titres (en anglais, <span lang="en">«&nbsp;subtitles&nbsp;»</span>) communiquent uniquement les dialogues parlés, à l’intention des personnes non sourdes qui ont de la difficulté à comprendre la langue de la vidéo. Il s’agit souvent d’une traduction vers une langue différente.</li>
 				</ul>
-				<p>Ces deux utilisations de l’expression sous-titres sont invoquées par un élément <code lang="en-CA">&lt;track&gt;</code> (<code lang="en-CA">kind="captions"</code> ou <code lang="en-CA">kind="subtitles"</code>) pointant vers un fichier texte chronométré (voir <a href="#track">Utilisation de l’élément &lt;track&gt;</a> ci-dessous).</p>
+				<p>Ces deux utilisations de l’expression sous-titres sont invoquées par un élément <code lang="en">&lt;track&gt;</code> (<code lang="en">kind="captions"</code> ou <code lang="en">kind="subtitles"</code>) pointant vers un fichier texte chronométré (voir <a href="#track">Utilisation de l’élément &lt;track&gt;</a> ci-dessous).</p>
 
 			</section>
 			
@@ -213,9 +211,9 @@
 				<p>Voir le section <a href="#auto-captions">Sous-titres automatisés</a>.</p>
 				<div class="panel panel-primary mrgn-tp-md">
 					<div class="panel-body well mrgn-bttm-0">
-						<p class="wb-inv">L'exemple commence</p>
+						<p class="wb-inv" role="separator">L'exemple commence</p>
 						<img src="images/meeting-policies-live-captions.png" class="img-responsive" alt="Capture d’écran des commandes d’appels de MS Teams illustrant la possibilité d’activer les sous-titres en direct">
-						<p class="wb-inv">L'exemple finit</p>						
+						<p class="wb-inv" role="separator">L'exemple finit</p>						
 					</div>
 				</div>
 				<hr/>
@@ -227,9 +225,9 @@
 						
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body well mrgn-bttm-0">
-								<p class="wb-inv">L'exemple commence</p>
+								<p class="wb-inv" role="separator">L'exemple commence</p>
 								<img src="images/image2.png" class="img-responsive" alt="Capture d'écran d'une vidéo d'annonce de vol en direct sans sous-titres">
-								<p class="wb-inv">L'exemple finit</p>
+								<p class="wb-inv" role="separator">L'exemple finit</p>
 							</div>
 						</div>
 					</div>
@@ -414,7 +412,7 @@
 						<h3 class="text-success mrgn-tp-0 h3" id="example-vtt"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Bon exemple&nbsp;: Format de fichier de sous-titres WebVTT</h3>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body well mrgn-bttm-0">
-								<p class="wb-inv">L'exemple commence</p>
+								<p class="wb-inv" role="separator">L'exemple commence</p>
 								<p>WEBVTT</p>
 								<p>00:02.500 --&gt; 00:06.340</p>
 								<p>&lt;v Eric&gt;Bonjour, je m'appelle Eric, et je suis un employé de Service Canada.</p>
@@ -424,7 +422,7 @@
 								<p>&lt;v Eric&gt;quand vous êtes au chômage, trouver un emploi est votre priorité</p>
 								<p>00:10.040 --&gt; 00:11.75</p>
 								<p>&lt;v Eric&gt;à plein temps.</p>
-								<p class="wb-inv">L'exemple finit</p>
+								<p class="wb-inv" role="separator">L'exemple finit</p>
 							</div>
 						</div>
 					</div>
@@ -432,7 +430,7 @@
 				<div class="panel panel-success">
 					<div class="panel-body">
 						<h3 class="text-success mrgn-tp-0 h3" id="good-example-ttml-caption"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Bon exemple&nbsp;: Format de fichier de sous-titrage TTML</h3>
-						<p class="wb-inv">Début du code</p>
+						<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-lg"><code class="language-xml">&lt;tt xmlns="http://www.w3.org/2006/10/ttaf1" xmlns:tts="http://www.w3.org/2006/10/ttaf1#style" xml:lang="en"&gt;
    &lt;head&gt;
       &lt;styling&gt;
@@ -465,10 +463,10 @@
 				<div class="panel panel-success mrgn-tp-lg">
 					<div class="panel-body">
 						<h3 class="text-success mrgn-tp-0 h3" id="example-inline"><span class="glyphicon glyphicon-ok-circle"></span> Bon exemple&nbsp;: Sous-titres en utilisant le HTML en ligne</h3>
-						<p>Le lecteur multimédia de la BOEW peut intégrer des sous-titres et des transcriptions descriptives dans le code HTML en ligne, dans  <code lang="en-CA">&lt;figcaption&gt;</code> l’élément:</p>
+						<p>Le lecteur multimédia de la BOEW peut intégrer des sous-titres et des transcriptions descriptives dans le code HTML en ligne, dans  <code lang="en">&lt;figcaption&gt;</code> l’élément:</p>
 						<ul>
-							<li>les éléments<code lang="en-CA">&lt;p&gt;</code>  une transcription descriptive utilisent l’attribut <code lang="en-CA">class="wet-boew-vd"</code> l’attribut.</li>
-							<li>les éléments<code lang="en-CA">&lt;span&gt;</code>  contenant des sous-titres utilisent <code lang="en-CA">class="wd-tmtxt"</code>, <code lang="en-CA">data-begin</code> and <code lang="en-CA">data-dur</code> les attributs. JavaScript identifie les sous-titres par ces attributs et affiche les sous-titres de façon dynamique dans un <code lang="en-CA">&lt;div&gt;</code> directement sous la vidéo.</li>
+							<li>les éléments<code lang="en">&lt;p&gt;</code>  une transcription descriptive utilisent l’attribut <code lang="en">class="wet-boew-vd"</code> l’attribut.</li>
+							<li>les éléments<code lang="en">&lt;span&gt;</code>  contenant des sous-titres utilisent <code lang="en">class="wd-tmtxt"</code>, <code lang="en">data-begin</code> and <code lang="en">data-dur</code> les attributs. JavaScript identifie les sous-titres par ces attributs et affiche les sous-titres de façon dynamique dans un <code lang="en">&lt;div&gt;</code> directement sous la vidéo.</li>
 						</ul>
 						<p>Le lecteur multimédia de la BOEW est décrit ci-dessous dans la page <a href="media-player-fr.html">accessibilité du lecteur multimédia.</a> </p>
 						<figure class="wb-mltmd">
@@ -550,7 +548,7 @@
 						
 						<details id="details-3" class="mrgn-tp-lg grouped on">
 							<summary class="bg-info">Voir le HTML</summary>
-							<p class="wb-inv">Début du code</p>
+							<p class="wb-inv" role="separator">Début du code</p>
 							
 <pre class="mrgn-tp-md"><code class="language-html">&lt;figure class="wb-mltmd"&gt;
    &lt;video poster="demo/video1-en.jpg" title="Looking for a Job"&gt;
@@ -590,7 +588,7 @@
       &lt;/details&gt;
    &lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
-							<p class="wb-inv">Fin du code</p>
+							<p class="wb-inv" role="separator">Fin du code</p>
 						</details>
 					</div>
 				</div>
@@ -598,7 +596,7 @@
 					<div class="panel-body">
 						<h3 class="text-success mrgn-tp-0 h3" id="example-ttml"><span class="glyphicon glyphicon-ok-circle"></span> Bon exemple&nbsp;: Sous-titres avec TTML</h3>
 						<p>En plus des sous-titres HTML5 en ligne, le lecteur multimédia de la BOEW prend en charge les formats de fichier de sous-titrage en langage de balisage texte chronométré (TTML&nbsp;– une variation du langage XML). </p>
-						<p>Utilisez <code lang="en-CA">&lt;track&gt;</code> l’élément pour préciser les pistes de texte pour les éléments <code lang="en-CA">&lt;audio&gt;</code> ou <code lang="en-CA">&lt;video&gt;</code>.</p>
+						<p>Utilisez <code lang="en">&lt;track&gt;</code> l’élément pour préciser les pistes de texte pour les éléments <code lang="en">&lt;audio&gt;</code> ou <code lang="en">&lt;video&gt;</code>.</p>
 						
 						<figure class="wb-mltmd">
 						
@@ -614,17 +612,17 @@
 								
 						<details id="details-4" class="mrgn-tp-lg grouped on">
 							<summary class="bg-info">Voir le HTML</summary>
-							<p class="wb-inv">Début du code</p>
+							<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-lg"><code class="language-html">&lt;video poster="[&hellip;]/ppe-high-risk-epi-risque-eleve.jpg" title="Personal Protective Equipment - Higher Risk Exposure"&gt;
    &lt;source src="[&hellip;]/ppe-high-risk-epi-risque-eleve-eng.mp4" type="video/mp4"/&gt;
    &lt;track data-type="text/xml" kind="captions" label="English" src="[&hellip;]/ppe-high-risk-epi-risque-eleve-eng.xml" srclang="en"/&gt;
  &lt;/video&gt;</code></pre>
-							<p class="wb-inv">Fin du code</p>
+							<p class="wb-inv" role="separator">Fin du code</p>
 						</details>
 						<details id="details-5" class="grouped on mrgn-tp-md">
 							<summary class="bg-info">Voir le TTML</summary>
 							<p><a href="https://www.canada.ca/content/dam/canada/health-canada/migration/healthy-canadians/alt/videos/ppe-high-risk-epi-risque-eleve-eng.xml">Fichier complet: ppe-high-risk-epi-risque-eleve-eng.xml</a></p>
-							<p class="wb-inv">Début du code</p>
+							<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-lg"><code class="language-xml">&lt;tt xmlns="http://www.w3.org/2006/04/ttaf1" xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling" xml:lang="en"&gt;
    &lt;head&gt;
       &lt;styling&gt;
@@ -668,7 +666,7 @@
       […]
    &lt;/body&gt;
 &lt;/tt&gt;</code></pre>
-							<p class="wb-inv">Fin du code</p>
+							<p class="wb-inv" role="separator">Fin du code</p>
 						</details>
 
 						<hr/>
@@ -680,18 +678,18 @@
 					<div class="panel-body">
 						<h3 class="text-success mrgn-tp-0 h3" id="good-example-captions-using-youtube"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Bon exemple&nbsp;: Sous-titres pour une vidéo préenregistrée avec l'audio de YouTube</h3>
 						<p>Le lecteur YouTube offre un soutien intégré à l’accessibilité pour les utilisateurs sourds ou malentendants. La majorité des vidéos de la <a href="https://www.canada.ca/fr/services/sante/video.html">galerie de vidéos liées à la santé</a> du site Canada.ca utilisent YouTube comme source de la vidéo. Des sous-titres peuvent être ajoutés et modifiés directement sur la plateforme YouTube.</p>
-						<p>Utilisez l’élément <code lang="en-CA">&lt;iframe&gt;</code> pour préciser la source pour la vidéo YouTube.</p>
+						<p>Utilisez l’élément <code lang="en">&lt;iframe&gt;</code> pour préciser la source pour la vidéo YouTube.</p>
 						<!-- To Be Deleted 
 						<iframe width="560" height="315" src="https://www.youtube.com/watch?v=0XJUhJgrTW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						-->
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/0XJUhJgrTW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						<br/>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Début du code</p>
+		<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;div class="iframe-container"&gt;
    &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/kQuDwArlYJM?cc_load_policy=1&amp;hl=en&amp;cc_lang_pref=fr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;</code></pre>
-						<p class="wb-inv">Fin du code</p>
+						<p class="wb-inv" role="separator">Fin du code</p>
 						<hr/>
 						<p class="small">Source:<a href="https://sante.canada.ca/fr/sante-publique/services/video/vaccins-covid-19-enfants-creent-nouveaux-souvenirs-pediatrique.html">Vaccins contre la COVID-19 (5 à 11 ans)</a></p>
 					</div>
@@ -700,9 +698,9 @@
 
 			<section>
 				<h2 id="track">Utilisation de l’élément track</h2>
-				<p>L’élément  <code lang="en-CA">&lt;track&gt;</code> vous permet de spécifier des pistes de texte chronométrées pour un élément <code lang="en-CA">&lt;audio&gt;</code> ou <code lang="en-CA">&lt;video&gt;</code>.</p>
+				<p>L’élément  <code lang="en">&lt;track&gt;</code> vous permet de spécifier des pistes de texte chronométrées pour un élément <code lang="en">&lt;audio&gt;</code> ou <code lang="en">&lt;video&gt;</code>.</p>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Début du code</p>
+		<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;video controls&gt;
    &lt;source src="/videos/compliance.mp4" type="video/mp4"&gt;
    &lt;track 
@@ -712,7 +710,7 @@
       src="/videos/tracks/compliance.vtt"/&gt;
 &lt;/video&gt;</code></pre>
 
-				<p class="wb-inv">Fin du code</p>
+				<p class="wb-inv" role="separator">Fin du code</p>
 				<h3 id="using-track-elements-attributes">Attributs</h3>
 				<dl>
 					<dt>default</dt>
@@ -816,9 +814,9 @@
 						<h3 class="text-success mrgn-tp-0 h3" id="caption-styliing-windows"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Bon exemple&nbsp;: Style de sous-titres dans Windows</h3>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body well mrgn-bttm-0">
-								<p class="wb-inv">L'exemple commence</p>
+								<p class="wb-inv" role="separator">L'exemple commence</p>
 								<img src="images/image6.png" class="img-responsive" alt="&#34;style des sous-titres dans les paramètres Windows pour personnaliser l’apparence visuelle des sous-titres dans le système d’exploitation&#34;.">
-								<p class="wb-inv">L'exemple finit</p>
+								<p class="wb-inv" role="separator">L'exemple finit</p>
 							</div>
 						</div>
 					</div>
@@ -828,9 +826,9 @@
 						<h3 class="text-success mrgn-tp-0 h3" id="caption-styling-mac"><span class="glyphicon glyphicon-ok-circle"></span> Bon exemple&nbsp;: Style des sous-titres dans MacOS</h3>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body well mrgn-bttm-0">
-								<p class="wb-inv">L'exemple commence</p>
+								<p class="wb-inv" role="separator">L'exemple commence</p>
 								<img src="images/image7.png" class="img-responsive" alt="style des sous-titres dans MacOS sous Accessibilité pour personnaliser l’apparence visuelle des sous-titres dans le système d’exploitation.">
-								<p class="wb-inv">L'exemple finit</p>
+								<p class="wb-inv" role="separator">L'exemple finit</p>
 							</div>
 						</div>
 					</div>
@@ -855,22 +853,22 @@
 					<h3>Techniques</h3>
 					<ul>
 						<li>
-							<a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G93" hreflang="en-CA" data-code="G93">G93&nbsp;: Fournir des sous-titres ouverts (toujours visibles) (en anglais) </a>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G93" hreflang="en" data-code="G93">G93&nbsp;: Fournir des sous-titres ouverts (toujours visibles) (en anglais) </a>
 						</li>
 						<li>
-							<a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G87" hreflang="en-CA" data-code="G87">G87&nbsp;: Fournir des sous-titres fermés (à la demande) (en anglais)</a>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G87" hreflang="en" data-code="G87">G87&nbsp;: Fournir des sous-titres fermés (à la demande) (en anglais)</a>
 						</li>
 						<li>
-							<a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H95" hreflang="en-CA" data-code="H95">H95 : Utiliser l’élément track pour fournir des sous-titres  (en anglais)</a>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H95" hreflang="en" data-code="H95">H95 : Utiliser l’élément track pour fournir des sous-titres  (en anglais)</a>
 						</li>
 					</ul>
 					<h3>Échecs</h3>
 					<ul>
 						<li>
-							<a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F8" hreflang="en-CA" data-code="F8">F8&nbsp;: Échec du critère de succès 1.2.2 consistant à omettre certains dialogues ou effets sonores importants dans les sous-titres (en anglais)</a>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F8" hreflang="en" data-code="F8">F8&nbsp;: Échec du critère de succès 1.2.2 consistant à omettre certains dialogues ou effets sonores importants dans les sous-titres (en anglais)</a>
 						</li>
 						<li>
-							<a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F75" hreflang="en-CA" data-code="F75">F75&nbsp;: Échec du critère de succès 1.2.2 consistant à fournir un média synchronisé sans sous-titres quand ce média présente plus d'information que celle présente sur la page (en anglais)</a>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F75" hreflang="en" data-code="F75">F75&nbsp;: Échec du critère de succès 1.2.2 consistant à fournir un média synchronisé sans sous-titres quand ce média présente plus d'information que celle présente sur la page (en anglais)</a>
 						</li>
 					</ul>
 				</details>

@@ -10,7 +10,7 @@
 		content="Accessibility guidelines related to page regions. This enables screen reader users to identify and navigate directly to important sections of a web page.">
 		<!-- Meta data-->
 	<!-- Load closure template scripts -->
-	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
+	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-en.js"></script>
 	<!-- Write closure template -->
 	<script src="../../../scripts/refTop.min.js"></script>
@@ -60,9 +60,7 @@
         "menuPath": "../../../ajax/menu-en.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Landmarks</h1>
 					<nav aria-labelledby="nav-table" class="mrgn-tp-md">
@@ -86,8 +84,8 @@
 						</details>
 					</nav>
                 
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1">Expand all details</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Collapse all<span class="wb-inv"> details</span></button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1" id="expandAllButton">Expand all details</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}" id="collapseAllButton"  disabled="disabled">	Collapse all<span class="wb-inv"> details</span></button>
 					
 		  <section>
                 
@@ -118,7 +116,7 @@
 							<code>role="banner"</code>
 					  </td>
 						<td>
-							Header - top region of every page that contains info such as logo, search, and nav options.
+							<dfn>Banner</dfn> - top region of every page that contains info such as logo, search, and nav options.
 					  </td>
 					</tr>
 					<tr>
@@ -129,7 +127,7 @@
 							<code>role="contentinfo"</code>
 					  </td>
 						<td>
-							Footer – bottom region of every page that contains info such as copyright, privacy or disclaimers
+							<dfn>Contentinfo</dfn> – aka footer. The bottom region of every page that contains info such as copyright, privacy or disclaimers
 					  </td>
 					</tr>
 					<tr>
@@ -140,7 +138,7 @@
 							<code>role="main"</code>
 					  </td>
 						<td>
-							Main content region of a page
+							<dfn>Main</dfn> content region of a page
 					  </td>
 					</tr>
 					<tr>
@@ -151,7 +149,7 @@
 							<code>role="navigation"</code>
 					  </td>
 						<td>
-							Navigation menu
+							<dfn>Navigation</dfn> menu
 					  </td>
 					</tr>
 					<tr>
@@ -162,7 +160,7 @@
 							<code>role="complementary"</code>
 					  </td>
 						<td>
-							Complementary Content – regions that support the main content that is separate and meaningful, such as side note explaining the main content
+							<dfn>Complementary</dfn> – regions that support the main content that is separate and meaningful, such as side note explaining the main content
 					  </td>
 					</tr>
 					<tr>
@@ -173,7 +171,7 @@
 							<code>role="search"</code>
 					  </td>
 						<td>
-							Search – a region that contains a collection of items and objects that, as a whole, combine to create search functionality.
+							<dfn>Search</dfn> – a region that contains a collection of items and objects that, as a whole, combine to create search functionality.
 					  </td>
 					</tr>
 					<tr>
@@ -184,19 +182,19 @@
 							<code>role="form"</code>
 					  </td>
 						<td>
-							Form - a region that contains a collection of items and objects that, as a whole, combine to create a form.
+							<dfn>Form</dfn> - a region that contains a collection of items and objects that, as a whole, combine to create a form.
 					  </td>
 					</tr>
 					<tr>
 						<td>
-							<code>&lt;section&gt;</code> 
+							<code>&lt;section&gt;</code> when named
 							
 					  </td>
 						<td>
 							<code>role="region"</code>
 					  </td>
 						<td>
-							The <code>&lt;section&gt;</code> element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
+							<dfn>Region</dfn> - The <code>&lt;section&gt;</code> element, when named, represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
 					  </td>
 					</tr>
 			    </tbody>
@@ -209,13 +207,13 @@
 						<p>In this example, HTML5 sectioning elements define the landmarks for the most part. The <code>role="search"</code> attribute is unique and descriptive.</p>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body mrgn-bttm-0">
-								<p class="wb-inv">Example begins</p>
+								<p class="wb-inv" role="separator">Example begins</p>
 								<img src="images/image1.png" class="img-responsive" alt=" Screenshot of landmark roles in their conventional locations. A header region holds nav and role=&#34;search&#34; landmarks. Below the header, left to right, are nav, main and aside landmarks. At the bottom is the footer landmark.">
-								<p class="wb-inv">Example ends</p>
+								<p class="wb-inv" role="separator">Example ends</p>
 							</div>
 						</div>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;header&gt;
    &lt;nav aria-label="global"&gt;[…]&lt;/nav&gt;
    &lt;form role="search"&gt;[…]&lt;/form&gt;
@@ -227,11 +225,11 @@
 &lt;/div&gt;
 &lt;footer&gt;[…]&lt;/footer&gt;</code>
 </pre>
-								<p class="wb-inv">Code ends</p>
+								<p class="wb-inv" role="separator">Code ends</p>
 								
 								<p>Below, the markup uses ARIA landmark role attributes to define the regions.</p>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;div role="banner"&gt;
    &lt;div role="navigation" aria-label="global"&gt;[…]&lt;/div&gt;
    &lt;form role="search"&gt;[…]&lt;/form&gt;
@@ -243,7 +241,7 @@
 &lt;/div&gt;
 &lt;div role="contentinfo"&gt;[…]&lt;/div&gt;</code>
 </pre>
-								<p class="wb-inv">Code ends</p>
+								<p class="wb-inv" role="separator">Code ends</p>
 								
 					</div>
 				</div>

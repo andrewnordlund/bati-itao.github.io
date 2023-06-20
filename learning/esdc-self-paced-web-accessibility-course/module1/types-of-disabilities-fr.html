@@ -7,7 +7,7 @@
 	<meta content="width=device-width,initial-scale=1" name="viewport">
 	<!-- Meta data -->
 	<meta name="description"
-		content="Définit les types d’incapacités et les considérations de conception connexes. Couvre les aveugles, les personnes malvoyantes, les daltoniens, les sourds, les sourds aveugles ainsi que les déficiences motrices, les déficiences de lecture, les troubles cognitifs et les troubles d’apprentissage et neurologiques.">
+		content="Définit les types d’incapacités et les considérations de conception connexes. Couvre la cécité, la malvoyance, le daltonisme, le handicap auditif, la surdicécité, les déficiences motrices, les déficiences de lecture et les troubles cognitifs, ainsi que et les troubles d’apprentissage et neurologiques.">
 		<!-- Meta data-->
 	<!-- Load closure template scripts -->
 	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
@@ -207,10 +207,10 @@ $(function(){
 				</ul>
 			</li>
 			<li>
-				<a href="#deaf">Surdité</a>
+				<a href="#deaf">Déficience auditive</a>
 				<ul>
 					<li>
-						<a href="#307">Concept visant la surdité</a>
+						<a href="#307">Concept visant la déficience auditive</a>
 					</li>
 				</ul>
 			</li>
@@ -284,8 +284,8 @@ $(function(){
 			</details>
 		</nav>
 		
-			<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2  details-3  details-4">Afficher tout les détails</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  details-3  details-4 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Réduire tout<span class="wb-inv">les détails</span></button>
+			<button type="button"  class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2  details-3  details-4"   id="expandAllButton">Afficher tout les détails</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  details-3  details-4 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}"   id="collapseAllButton"  disabled="disabled">	Réduire tout<span class="wb-inv">les détails</span></button>
 				
 		
 			<section>                
@@ -475,17 +475,17 @@ $(function(){
 				<p>Image originale&nbsp;:</p>
 				<div class="panel panel-primary mrgn-tp-md">
 					<div class="panel-body mrgn-bttm-0">
-						<p class="wb-inv">L'exemple commence</p>
+						<p class="wb-inv" role="separator">L'exemple commence</p>
 						<img src="images/image6.png" class="img-responsive" alt="Un diagramme a bandes utilisant les couleurs verts, bleus et rouges.">
-						<p class="wb-inv">L'exemple finit</p>
+						<p class="wb-inv" role="separator">L'exemple finit</p>
 					</div>
 				</div>
 				<p>Simulation de protanopie (difficulté à percevoir la couleur rouge) :</p>
 				<div class="panel panel-primary mrgn-tp-md">
 					<div class="panel-body mrgn-bttm-0">
-						<p class="wb-inv">L'exemple commence</p>
+						<p class="wb-inv" role="separator">L'exemple commence</p>
 						<img src="images/image7.png" class="img-responsive" alt="Avec un filtre de protanopie, les couleurs rouge et vert transforment en deux teintes brunes. ">
-						<p class="wb-inv">L'exemple finit</p>
+						<p class="wb-inv" role="separator">L'exemple finit</p>
 					</div>
 				</div>
                	<div class="panel panel-success mrgn-tp-lg">
@@ -495,9 +495,9 @@ $(function(){
 						<p>Dans cet exemple, des motifs de fond sont utilisés pour identifier les trois catégories x, y et z. La couleur ne véhicule plus uniquement le sens.</p>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body mrgn-bttm-0">
-						<p class="wb-inv">L'exemple commence</p>
+						<p class="wb-inv" role="separator">L'exemple commence</p>
 								<img src="images/image5.png" class="img-responsive" alt="Un diagramme à bandes avec des motifs de fond.">
-						<p class="wb-inv">L'exemple finit</p>
+						<p class="wb-inv" role="separator">L'exemple finit</p>
 							</div>
 						</div>
 					</div>
@@ -511,13 +511,13 @@ $(function(){
 			</section>
 			
 			<section>				
-				<h2 id="deaf">Surdité</h2>
+				<h2 id="deaf">Déficience auditive</h2>
 				<p>W3C définit une déficience auditive comme étant une perte d’audition légère ou modérée dans une des oreilles ou dans les deux (« déficience auditive ») ou une perte auditive importante et non corrigible dans les deux oreilles (« surdité »). Les personnes ayant une déficience auditive ne peuvent pas entendre l’audio, préfèrent le contenu audio sous une autre forme ou accompagné de sous-titres.</p>
 				<p>La majeure partie du Web est en format visuel ou texte. Il est essentiel de rendre le contenu audio accessible aux utilisateurs ayant une déficience auditive.</p>
-				<h3 id="307">Concept visant la surdité</h3>
+				<h3 id="307">Concept visant la déficience auditive</h3>
 				<ul>
-					<li>Prévoir des <a href="../module9/captions-fr.html">sous-titres</a> pour le contenu vidéo.</li>
-					<li>Fournir une <a href="../module9/transcripts-fr.html">transcription</a> du contenu vidéo.</li>
+					<li>Prévoir des <a href="../module9/captions-fr.html">sous-titres</a> pour le contenu audio-vidéo.</li>
+					<li>Fournir une <a href="../module9/transcripts-fr.html">transcription</a> du contenu audio-vidéo.</li>
 					<li>Fournir une <a href="../module9/transcripts-fr.html">transcription</a> du contenu audio seulement.</li>
 					<li>Fournir les utilisateurs la possibilité <a href="../module9/introduction-fr.html">d’arrêter, de mettre en pause et d’ajuster le volume du contenu audio</a> (indépendamment du volume du système).</li>
 					<!-- 
@@ -677,7 +677,7 @@ $(function(){
 				<ul>
 					<li>Des lumières clignotent plus de 3 fois par seconde.</li>
 					<li>Le contenu du clignotant est assez grand. Les DACW fournissent une formule complexe ici, mais la règle générale est qu’un contenu clignotant dépassant 21 824 pixels carrés pose problème.</li>
-					<li>Le contenu clignotant présente un contraste élevé. Les DACW constituent une autre formule complexe ici, mais il est recommandé d’évaluer le contenu clignotant à l’aide d’un outil comme le <a href="http://trace.umd.edu/peat" lang="en-CA">Photosensitive Epilepsy Analysis Tool (PEAT)</a>.</li>
+					<li>Le contenu clignotant présente un contraste élevé. Les DACW constituent une autre formule complexe ici, mais il est recommandé d’évaluer le contenu clignotant à l’aide d’un outil comme le <a href="http://trace.umd.edu/peat" lang="en">Photosensitive Epilepsy Analysis Tool (PEAT)</a>.</li>
 				</ul>
 				<p>Comme les utilisateurs peuvent agrandir la page et agrandir la zone clignotante, il est plus sécuritaire de limiter le clignotement de n’importe quelle taille de contenu à un maximum de trois clignotements par période de 1 seconde.</p>
 				<h4 id="401">Concept visant les troubles convulsifs</h4>

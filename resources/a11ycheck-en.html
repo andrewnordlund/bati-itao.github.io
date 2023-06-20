@@ -48,6 +48,48 @@
     </script>
     <main role="main" property="mainContentOfPage" class="container">
         <h1 property="name" id="wb-cont">Web Accessibility Checklist</h1>
+
+	<h2>Level 1 - Basic</h2>
+	<ol>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>I can use Your App With A Keyboard Only (ie: without the need for a mouse or touch)?
+		<ul>
+			<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>I can <kbd>Tab</kbd> through all pages top to bottom, and <kbd>Shift+Tab</kbd> backwards from bottom to top.
+			<ul>
+				<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>...in a logical order</li>
+				<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>I can always see my focus indicator</li>
+				<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>My focus doesn't land on non-interactive, non-scrollable elements</li>
+			</ul></li>
+			<li>All tasks can be accomplished with the keyboard</li>
+		</ul>
+	</ol>
+
+	<h2>Level 2 - Intermediate</h2>
+	<ol>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>When I zoom into 200% everything works, and nothing is lost.</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>When I view at 320px wide, everything works (including with a keyboard), nothing is lost, and the page only scrolls up and down.</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>All pages have a unique and descriptive <code>&lt;title&gt;</code></li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>All <code>&lt;h#&gt;</code> heading text is descriptive</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span><code>&lt;h#&gt;</code> heading levels aren't skipped.</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>The purpose of each link can be determined from the link text. (i.e.: not "Click here", or "Read more".)</li>
+	</ol>
+
+	<h2>Level 3 - Advanced</h2>
+	<ol>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>ID values are unique on each page.</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>All pages are "Axe-clean" (i.e. the Axe DevTools browser extension gives no errors).</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>There is a 4.5:1 contrast ratio between text and its background.</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>All <code>&lt;table&gt;</code> data cells (<code>&lt;td&gt;</code> elements) are programmatically associated to appropriate <code>&lt;th&gt;</code> cells.</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>All inputs have a visual indication of what they're for.</li>
+		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>All inputs have a programmatically determinable accessible name (through associated <code>&lt;label&gt;</code>, <code>aria-label</code>, or <code>aria-labelledby</code>).</li>
+		
+	</ol>
+
+
+
+<!--
+
+
+
 	<ul class="list-unstyled mrgn-tp-lg">
 		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>Do not use a <code>&lt;table&gt;</code> for layout.</li>
 		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>Do not use <code>&lt;br&gt;</code> tags, or &nbsp; to create whitespace. Use CSS instead.</li>
@@ -66,6 +108,7 @@
 		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>Use <a href="https://wet-boew.github.io/wet-boew/index-en.html"><abbr title="Web Experience Toolkit">WET</abbr></a>’s <a href="https://wet-boew.github.io/wet-boew/demos/formvalid/formvalid-en.html">form validation</a>.</li>
 		<li class="mrgn-bttm-md"><span class="far fa-square mrgn-rght-md" aria-hidden="true"></span>All pages must validate: Use the <a href="https://validator.w3.org/"> Markup Validation Service</a>.</li>
 	</ul>
+	-->
         <div id="def-preFooter"></div>
         <script src="../scripts/preFooter.min.js"></script>
     </main>

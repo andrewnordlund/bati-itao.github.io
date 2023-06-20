@@ -10,7 +10,7 @@
             content="Accessibility guidelines related to hiding and exposing content. Describes how to hide content and requirements for exposing hidden content on hover or focus">
          <!-- Meta data-->
          <!-- Load closure template scripts -->
-         <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
+         <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
          <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-en.js"></script>
          <!-- Write closure template -->
          <script src="../../../scripts/refTop.min.js"></script>
@@ -58,9 +58,7 @@
         "menuPath": "../../../ajax/menu-en.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Hiding and exposing content on hover or focus</h1>
           <nav aria-labelledby="nav-table" class="mrgn-tp-md">
@@ -85,8 +83,8 @@
          </ul>
             </details>
          </nav>
-		 	<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1">Expand all details</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Collapse all<span class="wb-inv"> details</span></button>
+		 	<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1" id="expandAllButton" >Expand all details</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}" id="collapseAllButton"  disabled="disabled">	Collapse all<span class="wb-inv"> details</span></button>
 			
                   <section>
                      <h2 id="hiding-content">Hiding content</h2>
@@ -110,7 +108,7 @@
 							</h3>
 							 <div class="panel panel-primary">
 								<div class="panel-body well mrgn-bttm-0">
-									<p class="wb-inv">Example begins</p>
+									<p class="wb-inv" role="separator">Example begins</p>
 									
 									 <h4 class="mrgn-tp-0">How to Apply</h4>
 									 <p>[Teaser paragraph.]</p>
@@ -128,21 +126,21 @@
 										width: 1px;
 										}
 									 </style>
-									<p class="wb-inv">Example ends</p>
+									<p class="wb-inv" role="separator">Example ends</p>
 								</div>
 							</div>
 							
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;h4 class="mrgn-tp-0"&gt;How to Apply&lt;/h4&gt;
 &lt;p&gt;[Teaser paragraph.]&lt;/p&gt;
 &lt;a href="article/how-to-apply.html"&gt;
    &lt;span class="wb-inv"&gt;About How to Apply&lt;/span&gt; 
    Read more  
 &lt;/a&gt;</code></pre>
-							<p class="wb-inv">Code ends</p>
+							<p class="wb-inv" role="separator">Code ends</p>
 <p class="lang-label small">CSS</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-css">.wb-inv {
    clip: rect(1px,1px,1px,1px);
    height: 1px;
@@ -151,7 +149,7 @@
    position: absolute;
    width: 1px;
 }</code></pre>
-							<p class="wb-inv">Code ends</p>
+							<p class="wb-inv" role="separator">Code ends</p>
 						</div>
 					</div>
                   </section>

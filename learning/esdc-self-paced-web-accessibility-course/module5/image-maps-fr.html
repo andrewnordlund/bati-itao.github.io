@@ -10,7 +10,7 @@
 		content="Lignes directrices sur l’accessibilité relative aux iconocartes. Une iconocarte relie les zones géométriques d’une image. Elle comprend un élément img et un élément map.">
 		<!-- Meta data-->
 	<!-- Load closure template scripts -->
-	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
+		<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script></script>
 	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-fr.js"></script>
 	<!-- Write closure template -->
 	<script src="../../../scripts/refTop.min.js"></script>
@@ -60,9 +60,7 @@
         "menuPath": "../../../ajax/menu-fr.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch-fr.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Images cliquables</h1>
 		                
@@ -85,16 +83,16 @@
 					</ul>
 						</details>
 					</nav>
-<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1">Afficher tout les détails</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Réduire tout<span class="wb-inv">les détails</span></button>
+<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1"  id="expandAllButton">Afficher tout les détails</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}"  id="collapseAllButton"  disabled="disabled">	Réduire tout<span class="wb-inv">les détails</span></button>
 				
 	<section>
 		<h2 id="designing-with-image-maps">Conception avec des images cliquables</h2>
-		<p>Une image cliquable relie les zones géométriques d’une image. Elle comprend un élément <code lang="en-CA">&lt;img&gt;</code> et un élément <code lang="en-CA">&lt;map&gt;</code>. L’élément <code lang="en-CA">&lt;map&gt;</code> utilise son attribut <code lang="en-CA">usemap="IDREF"</code> pour faire référence à la valeur d’attribut <code lang="en-CA">id</code> de l’élément <code lang="en-CA">&lt;map&gt;</code>. Les éléments <code lang="en-CA">&lt;map&gt;</code> contiennent à leur tour des éléments <code lang="en-CA">&lt;area&gt;</code> qui définissent chacun une zone cliquable de l’image et servent de liens.</p>
+		<p>Une image cliquable relie les zones géométriques d’une image. Elle comprend un élément <code lang="en">&lt;img&gt;</code> et un élément <code lang="en">&lt;map&gt;</code>. L’élément <code lang="en">&lt;map&gt;</code> utilise son attribut <code lang="en">usemap="IDREF"</code> pour faire référence à la valeur d’attribut <code lang="en">id</code> de l’élément <code lang="en">&lt;map&gt;</code>. Les éléments <code lang="en">&lt;map&gt;</code> contiennent à leur tour des éléments <code lang="en">&lt;area&gt;</code> qui définissent chacun une zone cliquable de l’image et servent de liens.</p>
 		<p>Suivez les pratiques exemplaires suivantes pour ce qui a trait aux images cliquables:</p>
 		<ul>
-			<li>Décrire le contexte dans l’attribut <code lang="en-CA">alt</code> de l’élément source <code lang="en-CA">&lt;img&gt;</code></li>
-			<li>Describe each clickable region in the <code lang="en-CA">&lt;area&gt;</code> element’s <code lang="en-CA">alt</code> attribute.</li>
+			<li>Décrire le contexte dans l’attribut <code lang="en">alt</code> de l’élément source <code lang="en">&lt;img&gt;</code></li>
+			<li>Describe each clickable region in the <code lang="en">&lt;area&gt;</code> element’s <code lang="en">alt</code> attribute.</li>
 		</ul>
 	</section>
 	<section>
@@ -105,7 +103,7 @@
 				</h2>
 				<div class="panel panel-primary mrgn-tp-md">
 					<div class="panel-body well mrgn-bttm-0">
-						<p class="wb-inv">L'exemple commence</p>
+						<p class="wb-inv" role="separator">L'exemple commence</p>
 						<p> Veuillez sélectionner une forme : 
 							<img src="images/shapes.png" usemap="#shapes" alt="FQuatre formes sont disponibles&nbsp;: une boîte creuse rouge, un cercle vert, un triangle bleu et une étoile jaune à quatre pointes."> 
 							<map name="shapes"> 
@@ -116,12 +114,12 @@
 								<area shape="poly" coords="450,25,435,60,400,75,435,90,450,125,465,90,500,75,465,60" href="yellow.html" alt="Étoile jaune" /> 
 							</map> 
 						</p>
-						<p class="wb-inv">L'exemple finit</p>	
+						<p class="wb-inv" role="separator">L'exemple finit</p>	
 					</div>
 				</div>
 				
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Début du code</p>
+		<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;p&gt; Veuillez sélectionner une forme :  
    &lt;img src="shapes.png" usemap="#shapes" alt="Quatre formes sont disponibles : une boîte creuse rouge, un cercle vert, un triangle bleu et une étoile jaune à quatre pointes."&gt; 
    &lt;map name="shapes"&gt; 
@@ -133,11 +131,11 @@
    &lt;/map&gt; 
 &lt;/p&gt;</code>
 </pre>
-				<p class="wb-inv">Fin du code</p>	
+				<p class="wb-inv" role="separator">Fin du code</p>	
 			</div>
 		</div>	
 		<hr/>
-		<p class="small">L’exemple d’image cliquable provient du document WHATWG : <a href="https://html.spec.whatwg.org/#image-map" lang="en-CA">4.8.15: Image maps</a> tiré de <a href="https://html.spec.whatwg.org" lang="en-CA">HTML Living Standard</a> (en anglais seulement). Statut : Ébauche mise à jour le 12 octobre 2021.</p>
+		<p class="small">L’exemple d’image cliquable provient du document WHATWG : <a href="https://html.spec.whatwg.org/#image-map" lang="en">4.8.15: Image maps</a> tiré de <a href="https://html.spec.whatwg.org" lang="en">HTML Living Standard</a> (en anglais seulement). Statut : Ébauche mise à jour le 12 octobre 2021.</p>
 	</section>
 	<section>
 		<h2 id="wcag" class="wb-inv">Ressources WCAG connexes</h2>
@@ -157,7 +155,7 @@
 			<h3>Techniques</h3>
 			<ul>
 				<li>
-					<a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H24" hreflang="en-CA" data-code="H24">H24&nbsp;: Fournir un équivalent textuel pour l'élément area d'une image à zones cliquables (en anglais)</a>
+					<a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H24" hreflang="en" data-code="H24">H24&nbsp;: Fournir un équivalent textuel pour l'élément area d'une image à zones cliquables (en anglais)</a>
 				</li>
 			</ul>
 		</details>
