@@ -11,8 +11,7 @@
 		<!-- Meta data-->
 	<!-- Load closure template scripts -->
 	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
-	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-en.js"></script>
-	<!-- Write closure template -->
+	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-en.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><!-- Write closure template -->
 	<script src="../../../scripts/refTop.min.js"></script>
 	<link rel="stylesheet" href="../../../css/a11y-dark.css">
 	<script src="../../../scripts/highlight.min.js"></script>
@@ -61,9 +60,7 @@
         "menuPath": "../../../ajax/menu-en.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Caption and summary</h1>
 		
@@ -103,8 +100,8 @@
 					</ul>
 						</details>
 					</nav>
-					<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2  details-3  details-4">Expand all details</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  details-3  details-4 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Collapse all<span class="wb-inv"> details</span></button>
+					<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2  details-3  details-4" id="expandAllButton" id="expandAllButton">Expand all details</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  details-3  details-4 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}" id="collapseAllButton"  disabled="disabled">	Collapse all<span class="wb-inv"> details</span></button>
 				
 		<section>
 			<h2 id="overview-caption-summary">Overview – Caption and summary</h2>
@@ -121,7 +118,7 @@
 					<p>In this example &ldquo;Movies Releases&rdquo; tells users what information is in the table.</p>
 					<div class="panel panel-primary mrgn-tp-md">
 						<div class="panel-body well mrgn-bttm-0">
-							<p class="wb-inv">Example begins</p>
+							<p class="wb-inv" role="separator">Example begins</p>
 							<table class="table table-bordered table-hover">
 								<caption>Movies releases</caption>
 								<tr>
@@ -145,12 +142,12 @@
 									<td>Cineplex London</td>
 								</tr>
 							</table>
-							<p class="wb-inv">Example ends</p>
+							<p class="wb-inv" role="separator">Example ends</p>
 						</div>
 					</div>
 					<details id="details-2" class="mrgn-tp-lg grouped on">
 						<summary class="bg-info">View HTML</summary>
-						<p class="wb-inv">Code begins</p>
+						<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-md"><code class="language-html">&lt;table&gt;
   &lt;caption&gt;Movies releases&lt;/caption&gt;
   &lt;tr&gt;
@@ -175,7 +172,7 @@
   &lt;/tr&gt;
 &lt;/table&gt;</code>
 </pre>
-						<p class="wb-inv">Code ends</p>
+						<p class="wb-inv" role="separator">Code ends</p>
 					</details>
 				</div>
 			</div>
@@ -206,7 +203,7 @@
 					<p>In the example below, the complex table shows the number of students enrolled in two countries across four semester seasons. The <code>&lt;caption&gt;</code> element acts as a heading for the table and provides a summary that describes the structure of the table.</p>
 					<div class="panel panel-primary mrgn-tp-md">
 						<div class="panel-body well mrgn-bttm-0">
-							<p class="wb-inv">Example begins</p>
+							<p class="wb-inv" role="separator">Example begins</p>
 							<table class="table table-bordered table-hover">
 							  <caption>
 								Information on number of students enrolled
@@ -272,12 +269,12 @@
 								</tr>
 							  </tbody>
 							</table>
-							<p class="wb-inv">Example ends</p>
+							<p class="wb-inv" role="separator">Example ends</p>
 						</div>
 					</div>
 					<details  id="details-3" class="mrgn-tp-lg grouped on">
 						<summary class="bg-info">View HTML</summary>
-						<p class="wb-inv">Code begins</p>
+						<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-md"><code class="language-html">&lt;table&gt;
   &lt;caption&gt;
     Information on number of students enrolled
@@ -344,7 +341,7 @@
   &lt;/tbody&gt;
  &lt;/table&gt;</code>
 </pre>
-							<p class="wb-inv">Code ends</p>
+							<p class="wb-inv" role="separator">Code ends</p>
 						</details>
 					</div>
 				</div>
@@ -354,11 +351,11 @@
 						<h3 class="text-success mrgn-tp-0 h3" id="aria-describedby"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp; Good example: Using aria-describedby to provide table summary</h3>
 						<p>In this example, the summary precedes the table in a paragraph element. The table takes an <code>aria-describedby</code> attribute, which holds the <code>id</code> attribute value of the paragraph.</p>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;p id=&quot;tblDesc&quot;&gt;Column one holds the country and the programs, other columns show the semester season. Cells hold the number of students enrolled &lt;/p&gt; 
 &lt;table aria-describedby=&quot;tblDesc&quot;&gt;[…]&lt;/table&gt;</code>
 </pre>
-						<p class="wb-inv">Code ends</p>
+						<p class="wb-inv" role="separator">Code ends</p>
 
 					</div>
 				</div>
@@ -371,7 +368,7 @@
 						<p>The summary paragraph in the <code>&lt;figcaption&gt;</code> element is explicitly associated with the table using the <code>aria-describedby</code> attribute.</p>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body well mrgn-bttm-0">
-								<p class="wb-inv">Example begins</p>
+								<p class="wb-inv" role="separator">Example begins</p>
 								<figure>
 									  <figcaption>
 										<strong id="studentinfo-caption-b">Information on number of students enrolled</strong>
@@ -415,12 +412,12 @@
 									  </tbody>
 									  </table>
 								</figure>
-								<p class="wb-inv">Example ends</p>
+								<p class="wb-inv" role="separator">Example ends</p>
 							</div>
 						</div>
 						<details id="details-4"  class="mrgn-tp-lg grouped on">
 							<summary class="bg-info">View HTML</summary>
-							<p class="wb-inv">Code begins</p>
+							<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-md"><code class="language-html">&lt;figure&gt;
    &lt;figcaption&gt;
       &lt;strong id=&quot;studentinfo-caption-b&quot;&gt;USA: Information on number of students enrolled&lt;/strong&gt;
@@ -465,7 +462,7 @@
    &lt;/table&gt;
 &lt;/figure&gt;</code>
 </pre>
-							<p class="wb-inv">Code ends</p>
+							<p class="wb-inv" role="separator">Code ends</p>
 						</details>
 					</div>
 				</div>

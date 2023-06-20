@@ -10,7 +10,7 @@
 		content="Lignes directrices sur l’accessibilité relative à l’analyse syntaxique et à la validité. Les défauts de balisage peuvent faire en sorte que les agents utilisateurs ne parviennent pas à analyser le contenu ou à le présenter différemment.">
 		<!-- Meta data-->
 	<!-- Load closure template scripts -->
-	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
+	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-fr.js"></script>
 	<!-- Write closure template -->
 	<script src="../../../scripts/refTop.min.js"></script>
@@ -60,9 +60,7 @@
         "menuPath": "../../../ajax/menu-fr.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch-fr.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Analyse syntaxique et validité</h1>
 						
@@ -100,8 +98,8 @@
 					</ul>
 						</details>
 					</nav>
-					<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1">Afficher tout les détails</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Réduire tout<span class="wb-inv">les détails</span></button>
+					<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1" id="expandAllButton">Afficher tout les détails</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}"  id="collapseAllButton" disabled="disabled">	Réduire tout<span class="wb-inv">les détails</span></button>
 				
 		
 			<section>
@@ -121,8 +119,8 @@
 				<h2 id="elements-tags">Les éléments ont des balises de début et de fin complètes</h2>
 				<p>Les balises doivent contenir tous les caractères requis par la syntaxe HTML, par exemple, </p>
 				<ul>
-					<li>les balises de début consistent en un nom d’élément entouré des caractères «&nbsp;inférieur à&nbsp;» et «&nbsp;supérieur à&nbsp;»&nbsp;: <code lang="en-CA">&lt;h1&gt;</code></li>
-					<li>dans les balises de fermeture, il faut ajouter une barre oblique inverse&nbsp;: <code lang="en-CA">&lt;/h1&gt;</code></li>
+					<li>les balises de début consistent en un nom d’élément entouré des caractères «&nbsp;inférieur à&nbsp;» et «&nbsp;supérieur à&nbsp;»&nbsp;: <code lang="en">&lt;h1&gt;</code></li>
+					<li>dans les balises de fermeture, il faut ajouter une barre oblique inverse&nbsp;: <code lang="en">&lt;/h1&gt;</code></li>
 				</ul>
 			</section>
 			<section>
@@ -132,23 +130,23 @@
 					<div class="panel-body">
 						<h3 class="text-success mrgn-tp-0 h3"><span class="glyphicon glyphicon-ok-circle"></span> Bon exemple&nbsp;: Les balises de début et de fin d’éléments de la liste se trouvent à l’intérieur des balises de la liste parent</h3>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Début du code</p>
+		<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;ul&gt;
    &lt;li&gt;aïs&lt;/li&gt;
    &lt;li&gt;Tomates&lt;/li&gt;
    &lt;li&gt;Haricots&lt;/li&gt;
 &lt;/ul&gt;</code>
 </pre>
-						<p class="wb-inv">Fins de code</p>
+						<p class="wb-inv" role="separator">Fins de code</p>
 					</div>
 				</div>
 				<div class="panel panel-success mrgn-tp-lg">
 					<div class="panel-body">
 						<h3 id="inline-strong-element-tags" class="text-success mrgn-tp-0 h3"><span class="glyphicon glyphicon-ok-circle"></span> Bon exemple&nbsp;: Les balises d’un élément fort inclus par référence sont entièrement emboîtées à l’intérieur des balises du paragraphe parent</h3>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Début du code</p>
+		<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; Verrouillez la porte en partant.&lt;/p&gt;</code></pre>
-						<p class="wb-inv">Fins de code</p>
+						<p class="wb-inv" role="separator">Fins de code</p>
 					</div>
 				</div>
 				<div class="panel panel-danger mrgn-tp-lg">
@@ -157,7 +155,7 @@
 
 				<p>Les «&nbsp;éléments de liste sans élément de liste parent&nbsp;» et les «&nbsp;éléments de texte sans élément de liste parent&nbsp;» sont relevés par le validateur&nbsp;W3C.</p>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Début du code</p>
+		<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;body&gt;
    &lt;h1&gt;En-tête avec toutes les balises nécessaires&lt;/h1&gt;
    &lt;p&gt;Paragraphe avec toutes les balises nécessaires&lt;/p&gt;
@@ -168,7 +166,7 @@
    &lt;/ul&gt;
 &lt;/body&gt;</code>
 </pre>
-<p class="wb-inv">Fins de code</p>
+<p class="wb-inv" role="separator">Fins de code</p>
 					</div>
 				</div>
 			</section>
@@ -178,7 +176,7 @@
 			</section>
 			<section>
 				<p id="idunique">Assurez-vous qu’aucune valeur d’attribut d’identification n’est répétée dans une vue de page.</p>
-				<p>Les valeurs des identificateurs sont utilisées par les technologies d’assistance pour associer les étiquettes et les descriptions avec les éléments, pour les associations d’en-têtes et de cellules dans les tableaux complexes et pour définir les relations dans les widgets d’ARIA (<code lang="en-CA">aria-owns</code>, <code lang="en-CA">aria-controls</code>, etc.). Les valeurs d’attribut d’identification en double peuvent semer de la confusion et, dans le cas des formulaires, peuvent entraîner des erreurs de saisie par l’utilisateur, les champs de saisie étant mal identifiés ou mal décrits.</p>
+				<p>Les valeurs des identificateurs sont utilisées par les technologies d’assistance pour associer les étiquettes et les descriptions avec les éléments, pour les associations d’en-têtes et de cellules dans les tableaux complexes et pour définir les relations dans les widgets d’ARIA (<code lang="en">aria-owns</code>, <code lang="en">aria-controls</code>, etc.). Les valeurs d’attribut d’identification en double peuvent semer de la confusion et, dans le cas des formulaires, peuvent entraîner des erreurs de saisie par l’utilisateur, les champs de saisie étant mal identifiés ou mal décrits.</p>
 			</section>
 			<section>
 				

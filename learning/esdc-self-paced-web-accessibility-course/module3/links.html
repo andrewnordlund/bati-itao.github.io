@@ -11,8 +11,7 @@
 		<!-- Meta data-->
 	<!-- Load closure template scripts -->
 	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
-	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-en.js"></script>
-	<!-- Write closure template -->
+	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-en.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><!-- Write closure template -->
 	<script src="../../../scripts/refTop.min.js"></script>
 	<link rel="stylesheet" href="../../../css/a11y-dark.css">
 	<script src="../../../scripts/highlight.min.js"></script>
@@ -61,9 +60,7 @@
         "menuPath": "../../../ajax/menu-en.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Links</h1>
 		                
@@ -143,8 +140,8 @@
 						</details>
 					</nav>
 					
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2  details-3  details-4 details-5">Expand all details</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  details-3  details-4 details-5" data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Collapse all<span class="wb-inv"> details</span></button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2  details-3  details-4 details-5" id="expandAllButton" id="expandAllButton">Expand all details</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  details-3  details-4 details-5" data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}" id="collapseAllButton"  disabled="disabled">	Collapse all<span class="wb-inv"> details</span></button>
 					
 			<section>
 				
@@ -182,11 +179,11 @@
 						<p>In this example, the link text &ldquo;<q>how much</q>&rdquo; communicates nothing useful:</p>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body well mrgn-bttm-0">
-								<p class="wb-inv">Example begins</p>	
+								<p class="wb-inv" role="separator">Example begins</p>	
 								<blockquote>
 									<p>A Food Guide Serving is simply a reference amount. It helps you understand <a href="http://www.hc-sc.gc.ca/fn-an/food-guide-aliment/basics-base/quantit-eng.php">how much</a> food is recommended every day from each of the four food groups. In some cases, a Food Guide Serving may be close to what you eat, such as an apple. In other cases, such as rice or pasta, you may serve yourself more than one Food Guide Serving.</p>
 								</blockquote>
-								<p class="wb-inv">Example ends</p>
+								<p class="wb-inv" role="separator">Example ends</p>
 							</div>
 						</div>
 					</div>
@@ -198,14 +195,14 @@
 						<p>In this example, the purpose of the link is perfectly clear.</p>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body well mrgn-bttm-0">
-								<p class="wb-inv">Example begins</p>
+								<p class="wb-inv" role="separator">Example begins</p>
 								<blockquote>
 									<p>A Food Guide serving is how much food you should eat from each of the 4 food groups every day. In some cases, a serving is the amount of a given food group that you normally eat in one sitting, like an apple. In other cases, the daily amount is more than one serving, such as for rice or pasta.</p>
 									<p>
 										<a href="http://www.hc-sc.gc.ca/fn-an/food-guide-aliment/basics-base/quantit-eng.php">Number of daily food servings for children, teens and adults</a>
 									</p>
 								</blockquote>
-								<p class="wb-inv">Example ends</p>
+								<p class="wb-inv" role="separator">Example ends</p>
 							</div>
 						</div>
 					</div>
@@ -216,7 +213,7 @@
 						<h3 id="aria-label-link-purpose" class="text-success mrgn-tp-0 h3"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Good example: Using aria-label for link purpose</h3>
 						<p>In this example, the visible link text &ldquo;<q>Access</q>&rdquo; is repeated for each resource. When there's no avoiding duplicated, visible link text, you can distinguish each instance with the <code>aria-label</code> attribute.</p>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;h1&gt;Tools and resources&lt;/h1&gt;
 
 &lt;h2&gt;Planning Accessible Virtual Events – Job Aid&lt;/h2&gt;
@@ -231,7 +228,7 @@
    &lt;a href="[...]" aria-label="Access Employees with Disabilities Network"&gt;Access&lt;/a&gt;
 &lt;/p&gt;</code>
 </pre>
-						<p class="wb-inv">Code ends</p>
+						<p class="wb-inv" role="separator">Code ends</p>
 					</div>
 				</div>
 				<div class="panel panel-success mrgn-tp-lg">
@@ -244,7 +241,7 @@
 							<p>Note that one instance of the link text &ldquo;<q>Access</q>&rdquo; with an <code>id</code> attribute can be referenced by multiple ARIA labels, which may be more convenient than creating an <code>id</code> attribute for each instance of the link &ldquo;Access&rdquo;.</p>
 						</div>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;h1&gt;Tools and resources&lt;/h1&gt;
 
 &lt;h2 id="planning-virtual"&gt;Planning Accessible Virtual Events – Job Aid&lt;/h2&gt;
@@ -259,7 +256,7 @@
    &lt;a href="[...]" aria-labelledby="linktext ewdn"&gt;Access&lt;/a&gt;
 &lt;/p&gt;</code>
 </pre>
-						<p class="wb-inv">Code ends</p>
+						<p class="wb-inv" role="separator">Code ends</p>
 					</div>
 				</div>
 				<div class="panel panel-success mrgn-tp-lg">
@@ -268,7 +265,7 @@
 
 						<p>In this example, the duplicated link text &ldquo;<q>Access</q>&rdquo; is extended with text that’s been visually-hidden using the CSS "clip" method. The text is invisible, but it’s still in the HTML and so is encountered by assistive technology.</p>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;h1&gt;Tools and resources&lt;/h1&gt;
 
 &lt;h2&gt;Planning Accessible Virtual Events – Job Aid&lt;/h2&gt;
@@ -289,10 +286,10 @@
    &lt;/a&gt;
 &lt;/p&gt;</code>
 </pre>
-						<p class="wb-inv">Code ends</p>
+						<p class="wb-inv" role="separator">Code ends</p>
 						
 						<p class="lang-label small">CSS</p>
-						<p class="wb-inv">Code begins</p>
+						<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-css">.wb-inv {
    clip: rect(1px,1px,1px,1px);
    height: 1px;
@@ -302,7 +299,7 @@
    width: 1px;
 }</code>
 </pre>
-						<p class="wb-inv">Code ends</p>
+						<p class="wb-inv" role="separator">Code ends</p>
 					</div>
 				</div>	
 			<h3 id="link-purpose-wcag-resources" class="wb-inv">Related WCAG resources</h3>
@@ -326,7 +323,8 @@
 					<li>
 						<a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G53">G53: Identifying the purpose of a link using link text combined with the text of the enclosing sentence</a>
 					</li>
-					<li>H30: Providing link text that describes the purpose of a link for anchor elements</li>
+					<li><a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H30">H30: Providing link text that describes the purpose of a link for anchor elements</a>
+					</li>
 					<li>
 						<a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H77">H77: Identifying the purpose of a link using link text combined with its enclosing list item</a>
 					</li>
@@ -351,7 +349,7 @@
 				</ul>
 				<h4>Failures</h4>
 				<ul>
-					<li>F84: Failure of Success Criterion 2.4.9 due to using a non-specific link such as "click here" or "more" without a mechanism to change the link text to specific text.</li>
+					<li><a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F84">F84: Failure of Success Criterion 2.4.9 due to using a non-specific link such as "click here" or "more" without a mechanism to change the link text to specific text.</a></li>
 					<li>
 						<a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F89">F89: Failure of Success Criteria 2.4.4, 2.4.9 and 4.1.2 due to not providing an accessible name for an image which is the only content in a link</a>
 					</li>
@@ -444,22 +442,22 @@
 						<p>All browsers display a visible outline around the element that currently has keyboard focus, which can be disabled using the <code>outline: 0</code> or <code>outline: none</code> CSS property. If the visual focus indicator is removed, sighted keyboard users will have no idea which link has the focus, making it difficult or impossible to navigate the web page.</p>
 						<div class="panel panel-primary mrgn-tp-md">
 							<div class="panel-body well mrgn-bttm-0">
-								<p class="wb-inv">Example begins</p>
+								<p class="wb-inv" role="separator">Example begins</p>
 								<p>A link to <a href="http://www.google.ca" id="google">Google</a></p>
 								<style type="text/css">
 									a#google:focus {
 										outline:none;
 									}
 								</style>
-								<p class="wb-inv">Example ends</p>
+								<p class="wb-inv" role="separator">Example ends</p>
 							</div>
 						</div>
 <p class="lang-label small">CSS</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-css">a:focus {
    outline: none;
 }</code></pre>
-						<p class="wb-inv">Code ends</p>
+						<p class="wb-inv" role="separator">Code ends</p>
 					</div>
 				</div>
 				<div class="panel panel-success mrgn-tp-lg">
@@ -468,13 +466,13 @@
 
 						<p>In this example, the first link in a menu of three has a visual focus indicator consisting of a thick black outline, set closely to the text.</p>
 <p class="lang-label small">CSS</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-css">a:focus { 
    outline: 2px auto -webkit-focus-ring-color; 
    outline-offset: -2px; 
 }</code>
 </pre>
-						<p class="wb-inv">Code ends</p>
+						<p class="wb-inv" role="separator">Code ends</p>
 						<img src="images/image1.png" class="img-responsive" alt="Screenshot showing the visual focus indicator on a link, consisting of a thick black outline, set closely to the text. ">
 					</div>
 				</div>
@@ -575,7 +573,7 @@
 					<div class="panel-body">
 						<h3 id="link-window-visually-hidden" class="text-success mrgn-tp-0 h3"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Good example: Warn users link opens in a new window by revealing a visually-hidden message on focus and hover</h3>
             <p class="lang-label small">HTML</p>
-						<p class="wb-inv">Code begins</p>
+						<p class="wb-inv" role="separator">Code begins</p>
 
 <pre class="mrgn-tp-0"><code class="language-html">&lt;p&gt;
    This is an example of an 
@@ -585,7 +583,7 @@
    &lt;/a&gt;          
 &lt;/p&gt;</code>
 </pre>
-						<p class="wb-inv">Code begins</p>
+						<p class="wb-inv" role="separator">Code begins</p>
 						<p>Until the link receives focus, the inner span is visually hidden using the CSS "clip" method. On hover or focus, the warning &ldquo;<q>Opens in new window</q>&rdquo; (or &ldquo;<q>Opens in new tab</q>&rdquo;) is made visible. See WCAG Technique G201 for the complete HTML and CSS.</p>
 						<p>Consider styling the warning to appear like the <code>title</code> attribute tooltip.</p>
 					</div>

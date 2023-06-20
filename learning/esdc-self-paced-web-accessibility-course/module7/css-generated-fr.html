@@ -10,7 +10,7 @@
             content="Lignes directrices sur l’accessibilité relative au contenu généré par les feuilles de style en cascade CSS. Éviter le contenu généré par feuilles de style en cascade CSS">
          <!-- Meta data-->
          <!-- Load closure template scripts -->
-         <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
+         <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
          <script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-fr.js"></script>
          <!-- Write closure template -->
          <script src="../../../scripts/refTop.min.js"></script>
@@ -58,9 +58,7 @@
         "menuPath": "../../../ajax/menu-fr.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch-fr.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Texte et icônes générés par une CSS</h1>
           <nav aria-labelledby="nav-table" class="mrgn-tp-md">
@@ -83,12 +81,12 @@
          </ul>
             </details>
          </nav>
-		 <button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1">Afficher tout les détails</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Réduire tout<span class="wb-inv">les détails</span></button>
+		 <button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1" id="expandAllButton">Afficher tout les détails</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1 " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}"  id="collapseAllButton"  disabled="disabled">	Réduire tout<span class="wb-inv">les détails</span></button>
 				
                   <section>
                      <h2 id="contenu-genere-par-une-CSS">Conception avec du contenu généré par une CSS</h2>
-                     <p>Une CSS peut générer du texte et des icône au moyen des pseudo-classes <code lang="en-CA">::before</code> et <code lang="en-CA">::after</code>. Cependant, les DACW 2.1 ne permettent pas d’utiliser du contenu non décoratif généré par des feuilles de style en cascade (CSS), car il peut être écrasé par des feuilles de style d’utilisateur (utilisées par des utilisateurs malvoyants) et il est invisible pour la fonctionnalité de recherche du navigateur; voici, entre autres, les raisons évoquées dans le document <a href="https://docs.google.com/document/d/1kvz0D3Au1R6c6q8iKZNH3KqyBt3d6WaJNUCwV35BDX8/edit">defense of WCAG Failure F87</a>. Cela dit, il existe un scénario d’utilisation pour du texte supplémentaire généré par des feuilles de style en cascade ainsi qu’une technique généralement accessible pour les icônes d’information.</p>
+                     <p>Une CSS peut générer du texte et des icône au moyen des pseudo-classes <code lang="en">::before</code> et <code lang="en">::after</code>. Cependant, les DACW 2.1 ne permettent pas d’utiliser du contenu non décoratif généré par des feuilles de style en cascade (CSS), car il peut être écrasé par des feuilles de style d’utilisateur (utilisées par des utilisateurs malvoyants), il manque un rôle, et il est invisible pour la fonctionnalité de recherche du navigateur; voici, entre autres, les raisons évoquées dans le document <a href="https://docs.google.com/document/d/1kvz0D3Au1R6c6q8iKZNH3KqyBt3d6WaJNUCwV35BDX8/edit" lang="en">defense of WCAG Failure F87</a>. Cela dit, il existe un scénario d’utilisation pour du texte supplémentaire généré par des feuilles de style en cascade ainsi qu’une technique généralement accessible pour les icônes d’information.</p>
                      
                     
                     <p>Veuillez suivre les pratiques exemplaires suivantes en présence d’un contenu généré par des feuilles de style en cascade :</p>
@@ -123,7 +121,7 @@
 							</h2>
                      <p>Les rôles de l’élément <code>&lt;mark&gt;</code> et des éléments rédactionnels <code>&lt;del&gt;</code>, <code>&lt;ins&gt;</code> et <code>&lt;s&gt;</code> ne sont pas déclarés par les lecteurs d’écran. Pour signaler leur présence aux utilisateurs de lecteur d’écran, un texte visuellement masqué généré par CSS signale le début et la fin de chaque rôle.</p>
 					<p class="lang-label small">CSS</p>
-					<p class="wb-inv">Début du code</p>
+					<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-css">mark::before	{ content: " [mise en évidence du début] "; }
 mark::after	{ content: " [mise en évidence de la fin] "; }
 
@@ -150,11 +148,11 @@ s::before, s::after {
    white-space: nowrap;
 }</code></pre>
 
-							<p class="wb-inv">Fin du code</p>
+							<p class="wb-inv" role="separator">Fin du code</p>
 						</div>
 					</div>
 					<hr/>
-					<p class="small">Billet de blogue d’Adrian Roselli <a href="https://adrianroselli.com/2019/02/f87-css-generated-content-and-wcag-conformance.html" lang="en-CA">F87: CSS Generated Content and WCAG Conformance</a>. 24 février, 2019.</p>
+					<p class="small">Billet de blogue d’Adrian Roselli <a href="https://adrianroselli.com/2019/02/f87-css-generated-content-and-wcag-conformance.html" lang="en">F87: CSS Generated Content and WCAG Conformance</a>. 24 février, 2019.</p>
 				
 				</section>	
 				
@@ -164,14 +162,14 @@ s::before, s::after {
 							<h2 class="text-success mrgn-tp-0 h3" id="informative-css"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Bon exemple : Icône CSS informative</h2>
 							 <p>Dans cet exemple, l’icône de marteau Font Awesome est utilisée pour représenter une tâche.</p> 
 							<ul>
-								<li>L’élément <code lang="en-CA">&lt;span&gt;</code> avec les classes <code lang="en-CA">.fas</code> et <code lang="en-CA">.fa-hammer</code> affiche l’icône par l’entremise d’une pseudo-classe de CSS, <code lang="en-CA">:before</code>.</li>
-								<li>Son attribut <code lang="en-CA">title</code> contient une infobulle pour les utilisateurs de souris, « Tâche ».</li>
-								<li>Son attribut <code lang="en-CA">aria-hidden="true"</code> cache l’élément aux lecteurs d’écran, car leur support de l'attribut <code lang="en-CA">title</code> est incohérent.</li>
-								<li>Juste après l’icône on trouve un élément <code lang="en-CA">&lt;span&gt;</code> visuellement masqué qui porte le nom « Tâche », et qui se déclare sur tous les lecteurs d’écran.</li>
+								<li>L’élément <code lang="en">&lt;span&gt;</code> avec les classes <code lang="en">.fas</code> et <code lang="en">.fa-hammer</code> affiche l’icône par l’entremise d’une pseudo-classe de CSS, <code lang="en">:before</code>.</li>
+								<li>Son attribut <code lang="en">title</code> contient une infobulle pour les utilisateurs de souris, « Tâche ».</li>
+								<li>Son attribut <code lang="en">aria-hidden="true"</code> cache l’élément aux lecteurs d’écran, car leur support de l'attribut <code lang="en">title</code> est incohérent.</li>
+								<li>Juste après l’icône on trouve un élément <code lang="en">&lt;span&gt;</code> visuellement masqué qui porte le nom « Tâche », et qui se déclare sur tous les lecteurs d’écran.</li>
 							</ul>
 							<div class="panel panel-primary">
 								<div class="panel-body well mrgn-bttm-0">
-									<p class="wb-inv">L'exemple commence</p>
+									<p class="wb-inv" role="separator">L'exemple commence</p>
 									 <style type="text/css">
 										.fa-hammer:before { content: "\f6e3"; }
 										.fa, .far, .fas {  font-family: "Font Awesome 5 Free"; }
@@ -191,7 +189,7 @@ s::before, s::after {
 										<span class="wb-inv">Tâche</span>
 										Remplir la demande
 									</p>
-									<p class="wb-inv">L'exemple finit</p>
+									<p class="wb-inv" role="separator">L'exemple finit</p>
 								</div>
 							</div>
 					<p>Si leurs feuilles de style personnalisées écrasent la déclaration font-family de l’icône, les utilisateurs de souris malvoyants peuvent accéder au nom de l’icône en survolant le carré du paramètre fictif, ce qui active l’infobulle de l’attribut title.</p>
@@ -205,16 +203,16 @@ s::before, s::after {
 								</div>
 							</div>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Début du code</p>
+		<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;p&gt;
    &lt;span class="fas fa-hammer" title="Tâche" aria-hidden="true"&gt;&lt;/span&gt;
    &lt;span class="wb-inv"&gt;Tâche&lt;/span&gt;
    Remplir la demande
  &lt;/p&gt;</code>
 </pre>
-							<p class="wb-inv">Fin du code</p>
+							<p class="wb-inv" role="separator">Fin du code</p>
 <p class="lang-label small">CSS</p>
-		<p class="wb-inv">Début du code</p>
+		<p class="wb-inv" role="separator">Début du code</p>
 <pre class="mrgn-tp-0"><code class="language-css">.fa-hammer:before { content: "\f6e3"; }
 .fas { font-family: "Font Awesome 5 Free"; }
 .wb-inv {
@@ -227,7 +225,7 @@ s::before, s::after {
 }
 </code></pre>
 
-							<p class="wb-inv">Fin du code</p>
+							<p class="wb-inv" role="separator">Fin du code</p>
 						</div>
 					</div>							 
                   </section>
@@ -254,7 +252,7 @@ s::before, s::after {
 						 <h3>Échecs</h3>
 						<ul>
 						   <li>
-							  <a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F87   " hreflang="en-CA" data-code="F87">F87&nbsp;: Échec du critère de succès 1.3.1 consistant à utiliser les pseudo-éléments :before et :after et la propriété content en CSS (en anglais)</a>
+							  <a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F87   " hreflang="en" data-code="F87">F87&nbsp;: Échec du critère de succès 1.3.1 consistant à utiliser les pseudo-éléments :before et :after et la propriété content en CSS (en anglais)</a>
 						   </li>
 						</ul>
                      </details>

@@ -11,7 +11,7 @@
 		<!-- Meta data-->
 
 	<!-- Load closure template scripts -->
-	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script>
+	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/soyutils.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://ssl-templates.services.gc.ca/rn/cls/wet/gcweb/cdts/compiled/wet-en.js"></script>
 	<!-- Write closure template -->
 	<script src="../../../scripts/refTop.min.js"></script>
@@ -63,9 +63,7 @@
         "menuPath": "../../../ajax/menu-en.html"
       });
 
-    </script>
-    <div class="container">
-      <div class="row">
+      </script> <div class="container"> <div class="row"><div id="def-search"></div><script src="../../../scripts/appSearch.js"></script>
         <main class="col-md-9 col-md-push-3" property="mainContentOfPage">
           <h1 property="name" id="wb-cont">Language</h1>
 						
@@ -94,8 +92,8 @@
 						</details>
 					</nav>
 					
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2 ">Expand all details</button>
-		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}">	Collapse all<span class="wb-inv"> details</span></button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" data-toggle="{&#x22;selector&#x22;: &#x22;.grouped&#x22;, &#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;on&#x22;}" aria-controls="details-1  details-2 " id="expandAllButton">Expand all details</button>
+		<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited" aria-controls="details-1  details-2  " data-toggle="{&#x22;group&#x22;: &#x22;.grouped&#x22;, &#x22;type&#x22;: &#x22;off&#x22;}" id="collapseAllButton"  disabled="disabled">	Collapse all<span class="wb-inv"> details</span></button>
 					
 			<section>
 				<h2 id="language">Language of page</h2>
@@ -107,7 +105,7 @@
 				<p>Add a <code>lang</code> attribute to the <code>&lt;html&gt;</code> element to set the default language for the entire page.</p>
 				<ul>
 					<li>For English: <code>&lt;html lang="en"&gt;</code> </li>
-					<li>For Canadian French <code>&lt;html lang="fr-CA"&gt;</code></li>
+					<li>For French <code>&lt;html lang="fr"&gt;</code></li>
 					<li>For other languages, choose the appropriate language code from ISO-639. Use the shortest available language code. 
 						<ul>
 							<li>
@@ -117,6 +115,8 @@
 					</li>
 				</ul>
 				<p>Use a three-letter code if no other code is available. <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO 639-2 three-letter code</a>.</p>
+				
+				<p>You may add a region subtag if you need to say that this is the language as spoken somewhere in a particular; e.g., <code>lang="fr-CA"</code> indicates French as spoken in Canada.</p>
 				
 				<h3 id="resources-wcag-language-pages" class="wb-inv">Related WCAG resources</h3>
 				<details id="details-1"  class="mrgn-tp-lg grouped on">
@@ -136,6 +136,7 @@
 				</details>			
 		  </section>
 
+
 			<section>
 
 				<h2 id="language-of-parts">Language of parts</h2>
@@ -149,22 +150,22 @@
 				<p>A German phrase in an English document:</p>
 					 <span class="wb-prettify"></span>
 					 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;html lang="en"&gt;
  [...]
  &lt;p&gt; He maintained that the DDR (German Democratic Republic) was just a &lt;span lang="de"&gt;Treppenwitz der Weltgeschichte&lt;/span&gt;.
  &lt;/p&gt;</code>
 </pre>
-<p class="wb-inv">Code ends</p>
+<p class="wb-inv" role="separator">Code ends</p>
 				<p>Alternative language links [for example: An HTML Web page includes links to versions of the page in other languages (e.g., Deutsch, Français, etc.]</p>
 <p class="lang-label small">HTML</p>
-		<p class="wb-inv">Code begins</p>
+		<p class="wb-inv" role="separator">Code begins</p>
 <pre class="mrgn-tp-0"><code class="language-html">&lt;ul&gt;
    &lt;li lang="de"&gt;&lt;a href="[...]"&gt;Deutsch&lt;/&lt;/a&gt;&lt;/li&gt;
-   &lt;li lang="fr-CA"&gt;&lt;a href="[...]"&gt; Français &lt;/&lt;/a&gt;&lt;/li&gt;
+   &lt;li lang="fr"&gt;&lt;a href="[...]"&gt; Français &lt;/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code>
 </pre>
-<p class="wb-inv">Code ends</p>
+<p class="wb-inv" role="separator">Code ends</p>
 				<p>Follow these best practices for language of parts:</p>
 				<ul>
 					<li>Insert <code>lang</code> attributes anywhere the default language changes to a different language</li>

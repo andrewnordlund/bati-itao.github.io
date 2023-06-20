@@ -61,7 +61,14 @@
 
 .social{
     width: 100%;
-    min-height: 3rem;
+    min-height: 4rem;
+}
+
+/*Temporary icon fix*/
+.social i span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 
